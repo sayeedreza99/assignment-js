@@ -5,7 +5,7 @@ function feetToMile(Feet) {
         Mile = Mile.toFixed(5);
     }
     else {
-        Mile = 'Warning! Distance can not be a negative number';
+        Mile = 'Warning! Distance can not be a negative number.';
     }
     return Mile;
 }
@@ -22,7 +22,7 @@ function woodCalculator(numberChair, numberTable, numberKhat) {
 
 function brickCalculator(numberFloor) {
     let totalBrick = 1000;
-    if (numberFloor <= 10) {
+    if (numberFloor <= 10 && numberFloor > 0) {
         totalBrick = numberFloor * totalBrick * 15;
     }
     if (numberFloor > 10 && numberFloor <= 20) {
@@ -30,6 +30,9 @@ function brickCalculator(numberFloor) {
     }
     if (numberFloor > 20) {
         totalBrick = totalBrick * (numberFloor - 20) * 10 + 150000 + 120000;
+    }
+    if (numberFloor <= 0) {
+        totalBrick = 'Warning! Floor number can not be ZERO or a negative number.';
     }
     return totalBrick;
 }
@@ -44,8 +47,5 @@ function tinyFriend(frndList) {
     }
     return minFrnd;
 }
-
-
-
 
 
